@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400|Lora");
+body {
+  background: #121221;
+}
+
+/* div box styling */
+.container {
+  margin: auto;
+  top: 10%;
+  width: 500px;
+  height: 550px;
+  position: relative;
+}
+
+.welcome {
+  background: #f6f6f6;
+  width: 430px;
+  height: 250px;
+  position: absolute;
+  left: 10%;
+  top: 25%;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pinkbox {
+  position: absolute;
+  top: -10%;
+  left: 4%;
+  background: #8ACDEA;
+  width: 220px;
+  height: 300px;
+  border-radius: 5px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: all .5s ease-in-out;
+  z-index: 2;
+}
+
+.nodisplay {
+  display: none;
+  transition: all .5s ease;
+}
+
+.leftbox, .rightbox {
+  position: absolute;
+  width: 50%;
+  transition: 1s all ease;
+}
+
+.leftbox {
+  left: -2%;
+}
+
+.rightbox {
+  right: -2%;
+}
+
+/* font & button styling */
+h1 {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  margin-top: 15px;
+  text-transform: uppercase;
+  color: #f6f6f6;
+  opacity: .5;
+  font-size: 1.2em;
+  letter-spacing: 8px;
+}
+
+.title {
+  font-family: "Lora", serif;
+  color: #8E9AAF;
+  font-size: 1em;
+  line-height: .9em;
+  letter-spacing: 3px;
+  text-align: center;
+  font-weight: 300;
+  margin-top: 20%;
+}
+
+.desc {
+  margin-top: -8px;
+}
+
+.account {
+  margin-top: 45%;
+  font-size: 6px;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-size: .4em;
+  letter-spacing: 2px;
+  color: #8E9AAF;
+  text-align: center;
+}
+
+span {
+  color: #8ACDEA;
+}
+
+.flower {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 42%;
+  left: 30%;
+  opacity: .7;
+}
+
+.smaller {
+  width: 55px;
+  height: 70px;
+  top: 45%;
+  left: 37%;
+  opacity: .9;
+}
+
+button {
+  padding: 8px;
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 7px;
+  border-radius: 10px;
+  margin: auto;
+  outline: none;
+  display: block;
+}
+button:hover {
+  background: #8ACDEA;
+  color: #f6f6f6;
+  transition: background-color 1s ease-out;
+}
+
+.button {
+  margin-top: 1%;
+  background: #f6f6f6;
+  color: #BF4342;
+  border: solid 1px #8ACDEA;
+}
+
+/* form styling */
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 7px;
+}
+
+.more-padding {
+  padding-top: 35px;
+}
+.more-padding input {
+  padding: 8px;
+}
+.more-padding .submit {
+  margin-top: 20px;
+}
+
+.submit {
+  margin-top: 15px;
+  padding: 10px;
+  border-color: #e7c0c5;
+}
+.submit:hover {
+  background: #CBC0D3;
+  border-color: #c6bacf;
+}
+
+input {
+  background: #8ACDEA;
+  width: 65%;
+  color: #BF4342;
+  border: none;
+  border-bottom: 1px solid rgba(246, 246, 246, 0.5);
+  padding: 5px;
+  margin: 7px;
+}
+input::placeholder {
+  color: rgba(246, 246, 246, 0.5);
+}
+input:focus {
+  color: #BF4342;
+  outline: none;
+  border-bottom: 1.2px solid rgba(213, 143, 153, 0.7);
+  transition: .8s all ease;
+}
+input:focus::placeholder {
+  opacity: 0;
+}
+
+label {
+  font-family: "Open Sans", sans-serif;
+  color: #BF4342;
+  font-size: 0.6em;
+  letter-spacing: 1px;
+}
+
+.checkbox {
+  display: inline;
+  white-space: nowrap;
+  position: relative;
+  left: -37px;
+}
+
+input[type=checkbox] {
+  width: 7px;
+  background: #BF4342;
+}
+
+.checkbox input[type="checkbox"]:checked + label {
+  color: #BF4342;
+  transition: .5s all ease;
+}
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="container">
+  <div class="welcome">
+    <div class="pinkbox">
+      <div class="signup nodisplay">
+        <h1>register</h1>
+        <form autocomplete="off">
+          <input type="text" placeholder="username">
+          <input type="email" placeholder="email">
+          <input type="password" placeholder="password">
+          <input type="password" placeholder="confirm password">
+          <button class="button submit">create account </button>
+        </form>
+      </div>
+      <div class="signin">
+        <h1>sign in</h1>
+        <form class="more-padding" autocomplete="off">
+          <input type="text" placeholder="username">
+          <input type="password" placeholder="password">
+          <div class="checkbox">
+            <input type="checkbox" id="remember" /><label for="remember">remember me</label>
+          </div>
+
+          <button class="button submit">login</button>
+        </form>
+      </div>
+    </div>
+    <div class="leftbox">
+      <h2 class="title"><span>GOOGLE</span>IS<br>YOUR FRIEND</h2>
+      <p class="desc">SPONSORED BY <span>GOOGLE</span></p>
+      <img class="flower smaller" src="google-logo-icon-PNG-Transparent-Background.png">
+      <p class="account">have an account?</p>
+      <button class="button" id="signin">login</button>
+    </div>
+    <div class="rightbox">
+      <h2 class="title"><span>STAX</span><br>CODES</h2>
+      <p class="desc"> pick your perfect <span>developer</span></p>
+      <img class="flower" src="Website Logo.png"/>
+      <p class="account">don't have an account?</p>
+      <button class="button" id="signup">sign up</button>
+    </div>
+  </div>
+ </div>
+
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
